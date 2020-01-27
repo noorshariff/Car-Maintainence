@@ -1,0 +1,68 @@
+<div class="container card card-body col-md-6 mt-4">
+    <form action="" #carForm="ngForm" (ngSubmit)="submit(carForm.value)">
+        <h1 class="text-white text-center bg-dark"> Car Details</h1>
+        
+        <div class="form-group">
+            <input type="text" name="carname" id="carname" placeholder="Car name" class="form-control" #carname="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="company" id="company" placeholder="company" class="form-control" #company="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="fueltype" id="fueltype" placeholder="fueltype" class="form-control" #fueltype="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="powersteering" id="powersteering" placeholder="powersteering" class="form-control" #powersteering="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="breaksystem" id="breaksystem" placeholder="breaksystem" class="form-control" #breaksystem="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="number" name="showroomprice" id="showroomprice" placeholder="showroomprice" class="form-control" #showroomprice="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="number" name="onroadprice" id="onroadprice" placeholder="onroadprice" class="form-control" #onroadprice="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="imageurl" id="imageurl" placeholder="imageurl" class="form-control" #imageurl="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="mileage" id="mileage" placeholder="Car name" class="form-control" #mileage="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="seatingcapacity" id="seatingcapacity" placeholder="seatingcapacity" class="form-control" #seatingcapacity="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="enginecapacity" id="enginecapacity" placeholder="enginecapacity" class="form-control" #enginecapacity="ngModel" ngModel>
+
+        </div>
+        <div class="form-group">
+            <input type="text" name="geartype" id="geartype" placeholder="geartype" class="form-control" #geartype="ngModel" ngModel>
+
+        </div>
+        <button type="submit" class="btn btn-primary float-right">Submit</button>
+       
+    </form>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+

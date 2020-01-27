@@ -1,0 +1,119 @@
+
+<div class="form-group mt-4 col-md-4">
+<input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search Car info">
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Car Name</th>
+        <th scope="col">Company</th>
+        <th scope="col">fueltype</th>
+        <th scope="col">powersteering</th>
+        <th scope="col">breaksystem</th>
+        <th scope="col">showroomprice</th>
+        <th scope="col">onroadprice</th>
+        <th scope="col">imageurl</th>
+        <th scope="col">mileage</th>
+        <th scope="col">seatingcapacity</th>
+        <th scope="col">enginecapacity</th>
+        <th scope="col">geartype</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of getArray| filter:searchText">
+        
+        <td>{{data.carname}}</td>
+        <td>{{data.company}}</td>
+        <td>{{data.fueltype}}</td>
+        <td>{{data.powersteering}}</td>
+        <td>{{data.breaksystem}}</td>
+        <td>{{data.showroomprice}}</td>
+        <td>{{data.onroadprice}}</td>
+        <td>{{data.imageurl}}</td>
+        <td>{{data.mileage}}</td>
+        <td>{{data.seatingcapacity}}</td>
+        <td>{{data.enginecapacity}}</td>
+        <td>{{data.geartype}}</td>
+        <td><button type="button" data-toggle="modal" data-target="#exampleModal" (click)="editeComponentData(data)">Update</button></td>
+        <td><button type="button" (click)="deleteComponentData(data._id)">Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+ 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <form action="" #modalForm="ngForm" (ngSubmit)="saveChanges(modalForm.value)">
+            <h1 class="text-white bg-dark text-center">Update Details</h1>
+            <input type="hidden" name="id" id="id" placeholder="id" class="form-control" #id="ngModel" ngModel [(ngModel)]="editableData._id">
+            <div class="form-group">
+                <input type="text" name="carname" id="carname" placeholder="Car name" class="form-control" #carname="ngModel" ngModel [(ngModel)]="editableData.carname">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="company" id="company" placeholder="company" class="form-control" #company="ngModel" ngModel [(ngModel)]="editableData.company">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="fueltype" id="fueltype" placeholder="fueltype" class="form-control" #fueltype="ngModel" ngModel [(ngModel)]="editableData.fueltype">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="powersteering" id="powersteering" placeholder="powersteering" class="form-control" #powersteering="ngModel" ngModel [(ngModel)]="editableData.powersteering">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="breaksystem" id="breaksystem" placeholder="breaksystem" class="form-control" #breaksystem="ngModel" ngModel [(ngModel)]="editableData.breaksystem">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="showroomprice" id="showroomprice" placeholder="showroomprice" class="form-control" #showroomprice="ngModel" ngModel [(ngModel)]="editableData.showroomprice">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="onroadprice" id="onroadprice" placeholder="onroadprice" class="form-control" #onroadprice="ngModel" ngModel [(ngModel)]="editableData.onroadprice">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="imageurl" id="imageurl" placeholder="imageurl" class="form-control" #imageurl="ngModel" ngModel [(ngModel)]="editableData.imageurl">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="mileage" id="mileage" placeholder="Car name" class="form-control" #mileage="ngModel" ngModel [(ngModel)]="editableData.mileage">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="seatingcapacity" id="seatingcapacity" placeholder="seatingcapacity" class="form-control" #seatingcapacity="ngModel" ngModel [(ngModel)]="editableData.seatingcapacity">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="enginecapacity" id="enginecapacity" placeholder="enginecapacity" class="form-control" #enginecapacity="ngModel" ngModel [(ngModel)]="editableData.enginecapacity">
+    
+            </div>
+            <div class="form-group">
+                <input type="text" name="geartype" id="geartype" placeholder="geartype" class="form-control" #geartype="ngModel" ngModel [(ngModel)]="editableData.geartype">
+    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
